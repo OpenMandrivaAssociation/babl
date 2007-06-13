@@ -1,9 +1,10 @@
-%define major 14
+%define major 0
 %define libname %mklibname %name %{major}
 
 Name:		babl
 Version:	0.0.14
-Release:	%mkrel 1
+Release:	%mkrel 2
+Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
 License:	GPL
