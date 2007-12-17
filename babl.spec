@@ -10,7 +10,6 @@ Group:		System/Libraries
 License:	GPL
 URL:		http://www.gegl.org/babl
 Source0:	%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
