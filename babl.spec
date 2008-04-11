@@ -2,8 +2,8 @@
 %define libname %mklibname %name %{major}
 
 Name:		babl
-Version:	0.0.14
-Release:	%mkrel 2
+Version:	0.0.20
+Release:	%mkrel 1
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
@@ -45,8 +45,8 @@ conversions between them.
 
 %files -n     %{libname}
 %defattr(-,root,root)
-%{_libdir}/libbabl-0.0.so.0
-%{_libdir}/libbabl-0.0.so.0.%major.0
+%{_libdir}/libbabl-0.0.so.%major
+%{_libdir}/libbabl-0.0.so.%major.20.0
 
 #--------------------------------------------------------------------
 %package -n     %{libname}-devel
@@ -69,6 +69,7 @@ conversions between them.
 %defattr(-,root,root)
 %{_libdir}/babl-0.0/gggl.so
 %{_libdir}/babl-0.0/naive-CMYK.so
+%{_libdir}/babl-0.0/gimp-8bit.so
 %{_libdir}/libbabl-0.0.la
 %{_libdir}/libbabl-0.0.so
 %{_libdir}/pkgconfig/babl.pc
