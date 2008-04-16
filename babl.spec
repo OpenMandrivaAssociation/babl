@@ -4,7 +4,7 @@
 
 Name:		babl
 Version:	0.0.20
-Release:	%mkrel 2
+Release:	%mkrel 3
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
@@ -30,6 +30,7 @@ conversions between them.
 %package -n     %{libname}
 Summary:        A library for %name
 Group:          System/Libraries
+Provides: 	%libname = %{version}-%{release}
 Obsoletes:	%{_lib}babel14
 
 %description -n %{libname}
