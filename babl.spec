@@ -1,9 +1,10 @@
 %define major 0
 %define libname %mklibname %name %{major}
+%define develname %mklibname -d %{name}
 
 Name:		babl
 Version:	0.0.20
-Release:	%mkrel 1
+Release:	%mkrel 2
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
@@ -29,6 +30,7 @@ conversions between them.
 %package -n     %{libname}
 Summary:        A library for %name
 Group:          System/Libraries
+Obsoletes:	%{_lib}babel14
 
 %description -n %{libname}
 Babl is a dynamic, any to any, pixel format conversion library.
@@ -49,14 +51,16 @@ conversions between them.
 %{_libdir}/libbabl-0.0.so.%major.20.0
 
 #--------------------------------------------------------------------
-%package -n     %{libname}-devel
+%package -n     %{develname}
 Summary:        Header files for %name 
 Group:          Development/C
 Requires:       %{libname} = %{version}-%{release}
 Provides:       lib%{name}-devel = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
+Obsoletes:	%{_lib}babel14-devel
+Obsoletes:	%{libname}-devel
 
-%description -n %{libname}-devel
+%description -n %{develname}
 Babl is a dynamic, any to any, pixel format conversion library.
 It provides conversions between the myriad of buffer types images
 can be stored in. Babl doesn't only help with existing pixel formats,
@@ -65,7 +69,7 @@ but also facilitates creation of new and uncommon ones.
 GEGL uses babl both for enumeration of pixel formats as well as
 conversions between them.
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/babl-0.0/gggl.so
 %{_libdir}/babl-0.0/naive-CMYK.so
