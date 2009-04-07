@@ -11,6 +11,7 @@ Group:		System/Libraries
 License:	LGPLv3+
 URL:		http://www.gegl.org/babl
 Source0:	%{name}-%{version}.tar.bz2
+Patch0:		babl-0.0.22-fix-str-fmt.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -56,8 +57,9 @@ GEGL uses babl both for enumeration of pixel formats as well as
 conversions between them.
 
 %prep
-
 %setup -q 
+%patch0 -p0
+
 %build
 %configure2_5x
 %make
