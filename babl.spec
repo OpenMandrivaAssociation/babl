@@ -66,9 +66,7 @@ conversions between them.
 
 %install
 rm -fr %buildroot installed-docs
-%makeinstall_std
-mv %buildroot%buildroot/%_libdir/* %buildroot%_libdir
-
+%makeinstall
 cp -r docs installed-docs
 cd installed-docs
 rm -rf tools Makefile* *.in graphics/Makefile*
