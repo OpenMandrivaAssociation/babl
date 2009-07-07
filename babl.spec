@@ -3,14 +3,14 @@
 %define develname %mklibname -d %{name}
 
 Name:		babl
-Version:	0.0.22
+Version:	0.1.0
 Release:	%mkrel 1
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
 License:	LGPLv3+
 URL:		http://www.gegl.org/babl
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gimp.org/pub/babl/0.1/%{name}-%{version}.tar.bz2
 Patch0:		babl-0.0.22-fix-str-fmt.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -67,6 +67,8 @@ conversions between them.
 %install
 rm -fr %buildroot installed-docs
 %makeinstall_std
+mv %buildroot%buildroot/%_libdir/* %buildroot%_libdir
+
 cp -r docs installed-docs
 cd installed-docs
 rm -rf tools Makefile* *.in graphics/Makefile*
@@ -84,13 +86,14 @@ rm -fr %buildroot
 %doc README NEWS TODO AUTHORS
 %{_libdir}/libbabl-0.0.so.%{major}*
 %dir %{_libdir}/babl-0.0/
-%{_libdir}/babl-0.0/gggl.so
-%{_libdir}/babl-0.0/naive-CMYK.so
-%{_libdir}/babl-0.0/gimp-8bit.so
-%{_libdir}/babl-0.0/CIE-Lab.so
-%{_libdir}/babl-0.0/gegl-fixups.so
-%{_libdir}/babl-0.0/gggl-lies.so
-%{_libdir}/babl-0.0/sse-fixups.so
+%{_libdir}/babl-0.0/gggl.so*
+%{_libdir}/babl-0.0/naive-CMYK.so*
+%{_libdir}/babl-0.0/gimp-8bit.so*
+%{_libdir}/babl-0.0/CIE-Lab.so*
+%{_libdir}/babl-0.0/gegl-fixups.so*
+%{_libdir}/babl-0.0/gggl-lies.so*
+%{_libdir}/babl-0.0/sse-fixups.so*
+%{_libdir}/babl-0.0/*.la
 
 %files -n %{develname}
 %defattr(-,root,root)
