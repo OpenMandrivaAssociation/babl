@@ -1,9 +1,10 @@
 %define major 0
-%define libname %mklibname %name %{major}
-%define develname %mklibname -d %{name}
+%define api 0.1
+%define libname %mklibname %name %{api}_%{major}
+%define develname %mklibname -d %{name} %{api} 
 
 Name:		babl
-Version:	0.1.0
+Version:	0.1.2
 Release:	%mkrel 1
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
@@ -11,8 +12,9 @@ Group:		System/Libraries
 License:	LGPLv3+
 URL:		http://www.gegl.org/babl
 Source0:	ftp://ftp.gimp.org/pub/babl/0.1/%{name}-%{version}.tar.bz2
-Patch0:		babl-0.0.22-fix-str-fmt.patch
+#Patch0:		babl-0.0.22-fix-str-fmt.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	librsvg
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
@@ -46,6 +48,7 @@ Provides:       lib%{name}-devel = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
 Obsoletes:	%{_lib}babel14-devel
 Obsoletes:	%{libname}-devel
+Obsoletes:	%{_lib}%{name}-devel
 
 %description -n %{develname}
 Babl is a dynamic, any to any, pixel format conversion library.
@@ -58,10 +61,10 @@ conversions between them.
 
 %prep
 %setup -q 
-%patch0 -p0
+#%patch0 -p0
 
 %build
-%configure2_5x
+%configure2_5x --disable-static 
 %make
 
 %install
@@ -70,6 +73,10 @@ rm -fr %buildroot installed-docs
 cp -r docs installed-docs
 cd installed-docs
 rm -rf tools Makefile* *.in graphics/Makefile*
+find %{buildroot} -type f -name "*.la" -exec rm -f {} ';' 
+
+%check
+make check 
 
 %clean
 rm -fr %buildroot
@@ -82,23 +89,23 @@ rm -fr %buildroot
 %files -n %{libname}
 %defattr(-,root,root)
 %doc README NEWS TODO AUTHORS
-%{_libdir}/libbabl-0.0.so.%{major}*
-%dir %{_libdir}/babl-0.0/
-%{_libdir}/babl-0.0/gggl.so*
-%{_libdir}/babl-0.0/naive-CMYK.so*
-%{_libdir}/babl-0.0/gimp-8bit.so*
-%{_libdir}/babl-0.0/CIE-Lab.so*
-%{_libdir}/babl-0.0/gegl-fixups.so*
-%{_libdir}/babl-0.0/gggl-lies.so*
-%{_libdir}/babl-0.0/sse-fixups.so*
-%{_libdir}/babl-0.0/*.la
+%{_libdir}/libbabl-%{api}.so.%{major}*
+%dir %{_libdir}/babl-%{api}/
+%{_libdir}/babl-%{api}/gggl.so*
+%{_libdir}/babl-%{api}/naive-CMYK.so*
+%{_libdir}/babl-%{api}/gimp-8bit.so*
+%{_libdir}/babl-%{api}/CIE.so*
+%{_libdir}/babl-%{api}/gegl-fixups.so*
+%{_libdir}/babl-%{api}/gggl-lies.so*
+%{_libdir}/babl-%{api}/sse-fixups.so*
+#%{_libdir}/babl-%{api}/*.la
 
 %files -n %{develname}
 %defattr(-,root,root)
 %doc ChangeLog installed-docs/*
-%{_libdir}/libbabl-0.0.la
-%{_libdir}/libbabl-0.0.so
+#%{_libdir}/libbabl-%{api}.la
+%{_libdir}/libbabl-%{api}.so
 %{_libdir}/pkgconfig/babl.pc
-%dir %{_includedir}/babl-0.0/babl
-%{_includedir}/babl-0.0/babl/*
+%dir %{_includedir}/babl-%{api}/babl
+%{_includedir}/babl-%{api}/babl/*
 
