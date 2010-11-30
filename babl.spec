@@ -5,7 +5,7 @@
 
 Name:		babl
 Version:	0.1.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Epoch:		1
 Summary:        Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
