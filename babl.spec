@@ -4,15 +4,14 @@
 %define develname %mklibname -d %{name} %{api} 
 
 Name:		babl
-Version:	0.1.2
-Release:	%mkrel 2
+Version:	0.1.4
+Release:	%mkrel 1
 Epoch:		1
-Summary:        Babl - dynamic, any to any, pixel format conversion library	
+Summary:	Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
 License:	LGPLv3+
 URL:		http://www.gegl.org/babl
 Source0:	ftp://ftp.gimp.org/pub/babl/0.1/%{name}-%{version}.tar.bz2
-#Patch0:		babl-0.0.22-fix-str-fmt.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	librsvg
 
@@ -61,7 +60,6 @@ conversions between them.
 
 %prep
 %setup -q 
-#%patch0 -p0
 
 %build
 %configure2_5x --disable-static 
