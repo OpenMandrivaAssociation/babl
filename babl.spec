@@ -5,7 +5,7 @@
 
 Name:		babl
 Epoch:		1
-Version:	0.1.6
+Version:	0.1.10
 Release:	1
 Summary:	Babl - dynamic, any to any, pixel format conversion library	
 Group:		System/Libraries
@@ -83,6 +83,9 @@ make check
 %{_libdir}/babl-%{api}/gegl-fixups.so*
 %{_libdir}/babl-%{api}/gggl-lies.so*
 %{_libdir}/babl-%{api}/sse-fixups.so*
+%{_libdir}/babl-%{api}/cairo.so*
+%{_libdir}/babl-%{api}/fast-float.so*
+%{_libdir}/babl-%{api}/float.so*
 
 %files -n %{develname}
 %doc ChangeLog installed-docs/*
