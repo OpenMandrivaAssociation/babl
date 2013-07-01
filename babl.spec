@@ -5,7 +5,7 @@
 %define libname %mklibname %{name} %{api} %{major}
 %define devname %mklibname -d %{name} %{api}
 
-Summary:	Babl - dynamic, any to any, pixel format conversion library
+Summary:	- dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
 Version:	0.1.10
