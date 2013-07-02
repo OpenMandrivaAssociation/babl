@@ -5,11 +5,11 @@
 %define libname %mklibname %{name} %{api} %{major}
 %define devname %mklibname -d %{name} %{api}
 
-Summary:	- dynamic, any to any, pixel format conversion library
+Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
 Version:	0.1.10
-Release:	1
+Release:	2
 Group:		System/Libraries
 License:	LGPLv3+
 Url:		http://www.gegl.org/babl
