@@ -8,12 +8,12 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.10
-Release:	3
+Version:	0.1.11
+Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
 Url:		http://www.gegl.org/babl
-Source0:	http://ftp.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	librsvg
 
 %description
@@ -57,9 +57,7 @@ conversions between them.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static
-
+%configure2_5x
 %make
 
 %install
@@ -81,13 +79,21 @@ make check
 %{_libdir}/babl-%{api}/CIE.so*
 %{_libdir}/babl-%{api}/gegl-fixups.so*
 %{_libdir}/babl-%{api}/gggl-lies.so*
-%{_libdir}/babl-%{api}/sse-fixups.so*
 %{_libdir}/babl-%{api}/cairo.so*
 %{_libdir}/babl-%{api}/fast-float.so*
 %{_libdir}/babl-%{api}/float.so*
+%{_libdir}/babl-%{api}/HSL.so*
+%{_libdir}/babl-%{api}/HSV.so*
+%{_libdir}/babl-%{api}/grey.so*
+%{_libdir}/babl-%{api}/simple.so*
+%{_libdir}/babl-%{api}/sse2-float.so*
+%{_libdir}/babl-%{api}/sse2-int16.so*
+%{_libdir}/babl-%{api}/sse2-int8.so*
+%{_libdir}/babl-%{api}/two-table.so*
+%{_libdir}/babl-%{api}/ycbcr.so*
 
 %files -n %{devname}
-%doc ChangeLog installed-docs/*
+%doc installed-docs/*
 %{_libdir}/libbabl-%{api}.so
 %{_libdir}/pkgconfig/babl.pc
 %dir %{_includedir}/babl-%{api}/babl
