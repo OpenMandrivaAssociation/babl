@@ -8,12 +8,12 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.11
-Release:	5
+Version:	0.1.14
+Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
 Url:		http://www.gegl.org/babl
-Source0:	http://ftp.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	librsvg
 
 %description
