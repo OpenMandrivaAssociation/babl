@@ -8,7 +8,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.14
+Version:	0.1.26
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
@@ -91,6 +91,13 @@ make check
 %{_libdir}/babl-%{api}/sse2-int8.so*
 %{_libdir}/babl-%{api}/two-table.so*
 %{_libdir}/babl-%{api}/ycbcr.so*
+%{_libdir}/babl-%{api}/16bit.so
+%{_libdir}/babl-%{api}/HCY.so
+%{_libdir}/babl-%{api}/float-half.so
+%{_libdir}/babl-%{api}/gggl-table-lies.so
+%{_libdir}/babl-%{api}/gggl-table.so
+%{_libdir}/babl-%{api}/sse-half.so
+%{_libdir}/babl-%{api}/sse4-int8.so
 
 %files -n %{devname}
 %doc installed-docs/*
