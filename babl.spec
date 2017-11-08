@@ -8,7 +8,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.26
+Version:	0.1.34
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
@@ -57,7 +57,7 @@ conversions between them.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
@@ -70,7 +70,6 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 make check
 
 %files -n %{libname}
-%doc README NEWS TODO AUTHORS
 %{_libdir}/libbabl-%{api}.so.%{major}*
 %dir %{_libdir}/babl-%{api}/
 %{_libdir}/babl-%{api}/gggl.so*
@@ -100,6 +99,7 @@ make check
 %{_libdir}/babl-%{api}/sse4-int8.so
 
 %files -n %{devname}
+%doc README NEWS TODO AUTHORS
 %doc installed-docs/*
 %{_libdir}/libbabl-%{api}.so
 %{_libdir}/pkgconfig/babl.pc
