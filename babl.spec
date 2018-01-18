@@ -8,7 +8,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.38
+Version:	0.1.40
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
