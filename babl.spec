@@ -8,7 +8,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.44
+Version:	0.1.46
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
@@ -81,22 +81,24 @@ make check
 %{_libdir}/babl-%{api}/cairo.so*
 %{_libdir}/babl-%{api}/fast-float.so*
 %{_libdir}/babl-%{api}/float.so*
+%{_libdir}/babl-%{api}/u16.so*
+%{_libdir}/babl-%{api}/u32.so*
+%{_libdir}/babl-%{api}/half.so*
+%{_libdir}/babl-%{api}/double.so*
 %{_libdir}/babl-%{api}/HSL.so*
 %{_libdir}/babl-%{api}/HSV.so*
 %{_libdir}/babl-%{api}/grey.so*
 %{_libdir}/babl-%{api}/simple.so*
-%{_libdir}/babl-%{api}/sse2-float.so*
-%{_libdir}/babl-%{api}/sse2-int16.so*
-%{_libdir}/babl-%{api}/sse2-int8.so*
 %{_libdir}/babl-%{api}/two-table.so*
 %{_libdir}/babl-%{api}/ycbcr.so*
-%{_libdir}/babl-%{api}/16bit.so
 %{_libdir}/babl-%{api}/HCY.so
-%{_libdir}/babl-%{api}/float-half.so
 %{_libdir}/babl-%{api}/gggl-table-lies.so
 %{_libdir}/babl-%{api}/gggl-table.so
-%{_libdir}/babl-%{api}/sse-half.so
-%{_libdir}/babl-%{api}/sse4-int8.so
+%optional %{_libdir}/babl-%{api}/sse2-float.so*
+%optional %{_libdir}/babl-%{api}/sse2-int16.so*
+%optional %{_libdir}/babl-%{api}/sse2-int8.so*
+%optional %{_libdir}/babl-%{api}/sse-half.so
+%optional %{_libdir}/babl-%{api}/sse4-int8.so
 
 %files -n %{devname}
 %doc README NEWS TODO AUTHORS
