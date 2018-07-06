@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   babl-0.1.50.tar.bz2: 1babea613ed9f1f4dae8eda5bb5963a2947201b2
+sources:
+  babl-0.1.52.tar.bz2: 8b6999269328507ce1b62cd52af40a88edd56fd1
