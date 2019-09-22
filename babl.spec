@@ -19,6 +19,7 @@ BuildRequires:	librsvg
 BuildRequires:	meson
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(lcms2)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
