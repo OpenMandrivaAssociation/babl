@@ -17,6 +17,8 @@ Url:		http://www.gegl.org/babl
 Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	librsvg
 BuildRequires:	meson
+BuildRequires:	cmake
+BuildRequires:	pkgconfig(lcms2)
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
