@@ -4,17 +4,19 @@
 %define api	0.1
 %define libname %mklibname %{name} %{api} %{major}
 %define devname %mklibname -d %{name} %{api}
+%define girname %mklibname %{name}-gir %{api}
 
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.66
+Version:	0.1.72
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
 Url:		http://www.gegl.org/babl
-Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.bz2
+Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	librsvg
+BuildRequires:	meson
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
@@ -42,6 +44,7 @@ conversions between them.
 Summary:	Header files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
+Requires:	%{girname} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
@@ -53,21 +56,25 @@ but also facilitates creation of new and uncommon ones.
 GEGL uses babl both for enumeration of pixel formats as well as
 conversions between them.
 
+%package -n %{girname}
+Summary:	GObject Introspection interface description for %{name}
+Group:		System/Libraries
+
+%description -n %{girname}
+GObject Introspection interface description for %{name}.
+
 %prep
 %setup -q
 
 %build
-%configure
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 cp -r docs installed-docs
 cd installed-docs
 rm -rf tools Makefile* *.in graphics/Makefile*
-
-%check
-make check
 
 %files -n %{libname}
 %{_libdir}/libbabl-%{api}.so.%{major}*
@@ -99,12 +106,16 @@ make check
 %optional %{_libdir}/babl-%{api}/sse2-int8.so*
 %optional %{_libdir}/babl-%{api}/sse-half.so
 %optional %{_libdir}/babl-%{api}/sse4-int8.so
+%optional %{_libdir}/babl-%{api}/avx2-int8.so
 
 %files -n %{devname}
-%doc README NEWS TODO AUTHORS
+%doc NEWS TODO AUTHORS
 %doc installed-docs/*
 %{_libdir}/libbabl-%{api}.so
 %{_libdir}/pkgconfig/babl.pc
 %dir %{_includedir}/babl-%{api}/babl
 %{_includedir}/babl-%{api}/babl/*
+%{_datadir}/gir-1.0/Babl-0.1.gir
 
+%files -n %{girname}
+%{_libdir}/girepository-1.0/Babl-%{api}.typelib
