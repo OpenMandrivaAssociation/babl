@@ -121,6 +121,8 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %dir %{_includedir}/babl-%{api}/babl
 %{_includedir}/babl-%{api}/babl/*
 %{_datadir}/gir-1.0/Babl-0.1.gir
+%{_datadir}/vala/vapi/babl-0.1.deps
+%{_datadir}/vala/vapi/babl-0.1.vapi
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Babl-%{api}.typelib
