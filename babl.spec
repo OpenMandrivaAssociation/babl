@@ -9,7 +9,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.74
+Version:	0.1.78
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
@@ -20,6 +20,8 @@ BuildRequires:	meson
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(vapigen)
+
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
