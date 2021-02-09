@@ -1,5 +1,7 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
+%global optflags %{optflags} -O3
+
 %define major	0
 %define api	0.1
 %define libname %mklibname %{name} %{api} %{major}
@@ -10,7 +12,7 @@ Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
 Version:	0.1.84
-Release:	1
+Release:	2
 Group:		System/Libraries
 License:	LGPLv3+
 Url:		http://www.gegl.org/babl
