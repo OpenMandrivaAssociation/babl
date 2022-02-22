@@ -106,6 +106,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %{_libdir}/babl-%{api}/two-table.so*
 %{_libdir}/babl-%{api}/ycbcr.so*
 %{_libdir}/babl-%{api}/HCY.so
+%{_libdir}/babl-%{api}/oklab.so*
 %{_libdir}/babl-%{api}/gggl-table-lies.so
 %{_libdir}/babl-%{api}/gggl-table.so
 %optional %{_libdir}/babl-%{api}/sse2-float.so*
