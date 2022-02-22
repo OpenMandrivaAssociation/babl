@@ -115,6 +115,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %optional %{_libdir}/babl-%{api}/sse-half.so
 %optional %{_libdir}/babl-%{api}/sse4-int8.so
 %optional %{_libdir}/babl-%{api}/avx2-int8.so
+%optional %{_libdir}/babl-%{api}/x86-64-v*
 
 %files -n %{devname}
 %doc NEWS TODO AUTHORS
