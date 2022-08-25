@@ -24,6 +24,9 @@ BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(vapigen)
 
+Requires:	%{libname} = %{EVRD}
+Requires:	%{girname} = %{EVRD}
+
 
 %description
 Babl is a dynamic, any to any, pixel format conversion library. 
@@ -37,6 +40,7 @@ conversions between them.
 %package -n %{libname}
 Summary:	A library for %{name}
 Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 Babl is a dynamic, any to any, pixel format conversion library.
@@ -52,6 +56,7 @@ Summary:	Header files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
 Requires:	%{girname} = %{EVRD}
+Requires:	%{name} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
@@ -82,6 +87,9 @@ GObject Introspection interface description for %{name}.
 cp -r docs installed-docs
 cd installed-docs
 rm -rf tools Makefile* *.in graphics/Makefile*
+
+%files
+%{_bindir}/babl
 
 %files -n %{libname}
 %{_libdir}/libbabl-%{api}.so.%{major}*
