@@ -129,7 +129,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %doc NEWS TODO AUTHORS
 %doc installed-docs/*
 %{_libdir}/libbabl-%{api}.so
-#{_libdir}/pkgconfig/babl.pc
+%{_libdir}/pkgconfig/babl-%{api}.pc
 %dir %{_includedir}/babl-%{api}/babl
 %{_includedir}/babl-%{api}/babl/*
 %{_datadir}/gir-1.0/Babl-0.1.gir
