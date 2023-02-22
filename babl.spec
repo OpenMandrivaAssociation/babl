@@ -11,7 +11,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.98
+Version:	0.1.100
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
@@ -129,7 +129,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %doc NEWS TODO AUTHORS
 %doc installed-docs/*
 %{_libdir}/libbabl-%{api}.so
-%{_libdir}/pkgconfig/babl.pc
+%{_libdir}/pkgconfig/babl-%{api}.pc
 %dir %{_includedir}/babl-%{api}/babl
 %{_includedir}/babl-%{api}/babl/*
 %{_datadir}/gir-1.0/Babl-0.1.gir
