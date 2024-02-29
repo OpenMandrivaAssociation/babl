@@ -20,6 +20,7 @@ Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	meson
 BuildRequires:	cmake
+BuildRequires:  pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(vapigen)
