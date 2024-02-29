@@ -118,6 +118,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %{_libdir}/babl-%{api}/oklab.so*
 %{_libdir}/babl-%{api}/gggl-table-lies.so
 %{_libdir}/babl-%{api}/gggl-table.so
+%{_libdir}/babl-0.1/formats.so
 %optional %{_libdir}/babl-%{api}/sse2-float.so*
 %optional %{_libdir}/babl-%{api}/sse2-int16.so*
 %optional %{_libdir}/babl-%{api}/sse2-int8.so*
@@ -129,6 +130,7 @@ rm -rf tools Makefile* *.in graphics/Makefile*
 %files -n %{devname}
 %doc NEWS TODO AUTHORS
 %doc installed-docs/*
+%doc %{_datadir}/doc/babl-0.1/
 %{_libdir}/libbabl-%{api}.so
 %{_libdir}/pkgconfig/babl-%{api}.pc
 %dir %{_includedir}/babl-%{api}/babl
