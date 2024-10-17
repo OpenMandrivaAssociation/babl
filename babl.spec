@@ -15,7 +15,7 @@ Version:	0.1.108
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
-Url:		http://www.gegl.org/babl
+Url:		https://www.gegl.org/babl
 Source0:	http://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	meson
