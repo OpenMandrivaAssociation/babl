@@ -11,7 +11,7 @@
 Summary:	Dynamic, any to any, pixel format conversion library
 Name:		babl
 Epoch:		1
-Version:	0.1.110
+Version:	0.1.112
 Release:	1
 Group:		System/Libraries
 License:	LGPLv3+
