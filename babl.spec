@@ -17,6 +17,7 @@ Group:		System/Libraries
 License:	LGPLv3+
 Url:		https://www.gegl.org/babl
 Source0:	https://download.gimp.org/pub/babl/%{url_ver}/%{name}-%{version}.tar.xz
+BuildRequires:  git-core
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	meson
 BuildRequires:	cmake
